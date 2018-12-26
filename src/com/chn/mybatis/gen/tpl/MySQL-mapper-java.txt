@@ -1,6 +1,6 @@
 package ${package};
 
-import ${package}.vo.*;
+import ${packagevo}.*;
 import java.util.*;
 import java.sql.*;
 

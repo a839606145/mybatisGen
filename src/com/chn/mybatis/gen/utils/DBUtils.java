@@ -33,16 +33,20 @@ public class DBUtils {
 
     public static final Logger log = Logger.getLogger(DBUtils.class);
     
-    public static final String CONFIG_FILE = "config.properties";
+    public static String CONFIG_FILE = "config.properties";
     
     public static final String KEY_DRIVER = "jdbc.driver";
     public static final String KEY_URL = "jdbc.url";
     public static final String KEY_USERNAME = "jdbc.username";
     public static final String KEY_PASSWORD = "jdbc.password";
     
-    public static Connection getConn() {
+    public static Connection getConn(String configFile) {
         
-        log.info("初始化数据库【开始】");
+    	if(configFile!=null && configFile.length()>0) {
+    		log.info("设置配置文件："+configFile);
+    		CONFIG_FILE=configFile;
+    	}
+    	log.info("初始化数据库【开始】");
         
         Connection conn = null;
         Cfg cfg = ConfigUtils.getCfg(CONFIG_FILE);

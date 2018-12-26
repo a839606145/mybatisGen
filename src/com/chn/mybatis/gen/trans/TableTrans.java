@@ -63,13 +63,13 @@ public class TableTrans extends Trans {
     
     public String getUpperStartClassName() {
         
-        return underscoreToCamelCase(meta.getTableName().substring(2));
+        return underscoreToCamelCase(meta.getTableName());
     }
     
     public String getLowerStartClassName() {
         
-        String camelCase = underscoreToCamelCase(meta.getTableName().substring(2));
-        return camelCase.substring(0,1).toLowerCase() + camelCase.substring(1);
+        String camelCase = underscoreToCamelCase(meta.getTableName());
+        return camelCase.substring(0,1).toLowerCase() + camelCase.substring(0);
     }
     
     public String getName() {
